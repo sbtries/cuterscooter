@@ -1,0 +1,8 @@
+{
+  "name": "cuterscooter",
+  "version": "1.0.0",
+  "description": "ecommerce for scooter stickers",
+  "main": "index.js",
+  "author": "SB Tracy",
+  "license": "MIT"
+}
