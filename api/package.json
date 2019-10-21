@@ -2,7 +2,26 @@
   "name": "cuterscooter",
   "version": "1.0.0",
   "description": "ecommerce for scooter stickers",
-  "main": "index.js",
-  "author": "SB Tracy",
-  "license": "MIT"
+  "main": "./src/index.js",
+  "scripts": {
+    "start": "nodemon ./src/index.js --watch ./src",
+    "test": "nyc mocha ./test/**/*.test.js --require=./test/test-helper --timeout=10000"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-async-router": "^0.1.15",
+    "mongoose": "^5.7.5",
+    "morgan": "^1.9.1"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^6.2.2",
+    "nodemon": "^1.19.4",
+    "nyc": "^14.1.1"
+  }
 }

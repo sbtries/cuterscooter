@@ -3,7 +3,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const morgan = require("morgan");
 
-const PeopleController = require("./controllers/people.controller");
+const StickerController = require("./controllers/sticker.controller.js");
 
 // Express application
 const app = express();
@@ -15,10 +15,10 @@ if(process.env.ENV !== "test") app.use(morgan("tiny"));
 app.use(express.json());
 
 // Controllers
-app.use("/people", PeopleController);
+app.use("/sticker", StickerController);
 
 // Helper functions
-const connectDatabase = async (databaseName="lab4-peopledb") => {
+const connectDatabase = async (databaseName="cuterscooter") => {
   const database = await mongoose.connect(
     `mongodb://localhost/${databaseName}`,
     {
