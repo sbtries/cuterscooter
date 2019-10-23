@@ -1,5 +1,5 @@
 const { AsyncRouter } = require("express-async-router");
-const Person = require("../models/Sticker");
+const Sticker = require("../models/Sticker");
 
 const router = AsyncRouter();
 
@@ -9,7 +9,7 @@ const router = AsyncRouter();
 
 // List
 router.get("/", async (req, res) => {
-  const sticker = await Person.find();
+  const sticker = await Sticker.find();
 
   res.send(sticker);
 });

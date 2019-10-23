@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const stickerSchema = Schema({
-  firstName: {
+  name: {
     type: String,
     required: true
   },
