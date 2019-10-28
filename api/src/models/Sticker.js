@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const { Schema } = mongoose;
+const { ObjectId } = Schema.Types;
 
 const stickerSchema = Schema({
   name: {
@@ -10,6 +11,22 @@ const stickerSchema = Schema({
   price: { 
       type: Number, 
       required: true
+  },
+  description: {
+    type: String,
+    required: false
+  },
+  imagePath: {
+    type: String, 
+    required: false
+  }
+}, {
+  timestamps: true,
+  toJSON: {
+    virtuals: true,
+  },
+  toObject: {
+    virtuals: true,
   }
 });
 

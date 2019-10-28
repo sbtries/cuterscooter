@@ -1,50 +1,46 @@
 const express = require("express");
-const cors = require("cors");
 const mongoose = require("mongoose");
 const morgan = require("morgan");
+const cors = require("cors");
 
-const StickerController = require("./controllers/sticker.controller.js");
 const AuthController = require("./controllers/auth.controller");
+const StickerController = require("./controllers/sticker.controller");
 const UsersController = require("./controllers/users.controller");
 
-// Express application
 const app = express();
 
-// Middleware
 app.use(cors());
-/* istanbul ignore if */
-if(process.env.ENV !== "test") app.use(morgan("tiny"));
+app.use(morgan("tiny"));
 app.use(express.json());
 
-// Controllers
-app.use("/stickers", StickerController);
 app.use("/auth", AuthController);
+app.use("/stickers", StickerController);
 app.use("/users", UsersController);
 
-// Helper functions
-const connectDatabase = async (databaseName="cuterscooter") => {
+const connectDatabase = async (databaseName="sticker", hostname="localhost") => {
   const database = await mongoose.connect(
-    `mongodb://localhost/${databaseName}`,
+    `mongodb://${hostname}/${databaseName}`,
     {
       useNewUrlParser: true,
-      useCreateIndex: true,
-      useFindAndModify: true,
-      useUnifiedTopology: true
+      useUnifiedTopology: true,
+      useCreateIndex: true
     }
   );
 
+  if(process.env.ENV !== "test") 
+    console.log(`🗑️ Database connected at mongodb://${hostname}/${databaseName}...`)
   return database;
 }
-const startServer = (port=8000, host="localhost") => {
-  app.listen(port, host, async () => {
+
+const startServer = (hostname="0.0.0.0", port=1337) => {
+  app.listen(port, hostname, async () => {
     await connectDatabase();
-
-    console.log(`Listening at ${host}:${port}...`);
-  })
+    if(process.env.ENV !== "test") 
+      console.log(`🚀 Server started at ${hostname}:${port}...`)
+  });
 }
-
 module.exports = {
   app,
   connectDatabase,
-  startServer,
+  startServer
 };

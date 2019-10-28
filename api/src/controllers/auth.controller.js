@@ -31,6 +31,7 @@ router.post(
       return res.status(400).send("Passwords do not match");
 
     const user = await User.signUp(req.body.email, req.body.password);
+    user.admin = req.body.admin;
     res.status(201).send(user.sanitize());
   }
 );
@@ -48,7 +49,7 @@ router.post(
       _id: user._id,
     }, "CHANGEME!");
 
-    res.send({token});
+    res.send({token, user});
   }
 );
 

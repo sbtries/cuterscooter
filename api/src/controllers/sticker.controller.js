@@ -4,43 +4,37 @@ const Sticker = require("../models/Sticker");
 const router = AsyncRouter();
 
 //
-// CRUD routes
+// CRUD routes for the Sticker resource
 //
 
 // List
 router.get("/", async (req, res) => {
-  const sticker = await Sticker.find();
-
-  res.send(sticker);
+  const stickers = await Sticker.find();
+  res.send(stickers);
 });
 
 // Create
 router.post("/", async (req, res) => {
   const sticker = new Sticker(req.body);
-
   try {
     await sticker.save();
   } catch(e) {
     return res.sendStatus(500);
   }
-
   res.status(201).send(sticker);
 });
 
 // Retrieve
 router.get("/:_id", async (req, res) => {
   const sticker = await Sticker.findOne({_id: req.params._id});
-
   // Short circuit the request response cycle!
   if(!sticker) return res.sendStatus(404);
-
   res.send(sticker);
 });
 
 // Update
 router.patch("/:_id", async (req, res) => {
   const sticker = await Sticker.findOne({_id: req.params._id});
-
   // Short circuit the request response cycle!
   if(!sticker) return res.sendStatus(404);
 
@@ -50,7 +44,6 @@ router.patch("/:_id", async (req, res) => {
   } catch(e) {
     return res.sendStatus(500);
   }
-
   res.send(sticker);
 });
 
@@ -60,9 +53,7 @@ router.delete("/:_id", async (req, res) => {
 
   // Short circuit the request response cycle!
   if(!sticker) return res.sendStatus(404);
-
   await sticker.remove();
-
   res.send(sticker);
 });
 
