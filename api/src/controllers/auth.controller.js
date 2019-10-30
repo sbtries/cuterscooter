@@ -30,8 +30,8 @@ router.post(
     if(req.body.password !== req.body.passwordConfirm)
       return res.status(400).send("Passwords do not match");
 
-    const user = await User.signUp(req.body.email, req.body.password);
-    user.admin = req.body.admin;
+    const user = await User.signUp(req.body.email, req.body.password, req.body.admin);
+    // user.admin = req.body.admin;
     res.status(201).send(user.sanitize());
   }
 );

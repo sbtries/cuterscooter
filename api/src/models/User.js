@@ -28,10 +28,11 @@ const userSchema = Schema({
   }
 });
 
-userSchema.statics.signUp = async function(email, password) {
+userSchema.statics.signUp = async function(email, password, admin) {
   const user = new this();
   user.email = email;
   user.hashPassword(password);
+  user.admin = admin;
 
   await user.save();
 
