@@ -1,0 +1,60 @@
+/* .NavBar {
+    padding: 2rem;
+    background: #1d090b;
+    color: #fccccc;
+  
+    display: flex;
+    justify-content: space-between;
+    align-stickers: center;
+    position: relative;
+  
+    z-index: 5;
+    box-shadow: 0px -2px 25px #665544;
+} */
+
+.btn {
+    background-color: #646464;
+    border-radius: 5px 10px 15px 20px; 
+      box-shadow: 0 5px 0 #665544;
+  color: #fac8c9;
+  padding: 1em 1.5em;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.btn:hover {
+  background-color: #fac8c9;
+  color: #665544
+}
+.btn:hover {
+    cursor: pointer;
+  }
+
+.btn:active {
+  box-shadow: none;
+  top: 5px;
+}
+
+/* .scooter {
+  position: relative;
+  min-height: 25vh;
+  padding: 2rem;
+  margin: auto;
+  color: #ffffff;
+}
+.scooter.bg-static {
+  background-color: #85c1e9;
+  background-size: cover;
+  background-position: center;
+}
+.scooter .bg-move {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: auto;
+  width: 15%;
+  background-image: url("../assets/vespaimage.png");
+  background-size: cover;
+  background-position: center;
+} */

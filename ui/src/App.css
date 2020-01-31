@@ -1,0 +1,33 @@
+.App {
+  text-align: center;
+}
+
+html { 
+  background: url(https://wallpapercave.com/wp/wp3261172.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+.container {
+  display: flex; /* or inline-flex */
+  align-stickers: flex-start;
+  flex-flow: row wrap;
+  padding: 0.5em;
+}
+
+.editForm {
+  max-width: 200px;
+}
+.profile {
+  border-radius: 50px;
+  padding: 20px;
+}
+.Form > * {
+  padding: 0.5em;
+}

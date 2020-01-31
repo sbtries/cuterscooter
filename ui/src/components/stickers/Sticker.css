@@ -1,0 +1,14 @@
+.Sticker {
+    background: #646464;
+    /* display: flex; or inline-flex */
+    padding: 1rem;
+    position: relative;
+    border: 1px solid #555;
+    box-shadow: 0px 5px 15px 5px rgba(0, 0, 0, 0.1);
+    /* flex-flow: row wrap; */
+    width: 20rem;
+    margin: 1rem;
+  }
+.img {
+    width: 15rem;
+}
