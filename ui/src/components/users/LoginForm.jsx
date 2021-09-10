@@ -36,7 +36,7 @@ const LoginForm = (props) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} class="container">
       {(loggedIn) && (
         (props.redirect) && (
           <Redirect push to={props.redirect} />

@@ -59,6 +59,7 @@ const SignUpForm = props => {
           onChange={handleUpdate}
           value={formState.email}
           placeholder="E-mail..."
+          class="container"
         />
         <input
           type="password"
