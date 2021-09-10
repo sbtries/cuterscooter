@@ -18,7 +18,7 @@ html {
   display: flex; /* or inline-flex */
   align-stickers: flex-start;
   flex-flow: row wrap;
-  padding: 0.5em;
+  padding: 1em;
 }
 
 .editForm {
