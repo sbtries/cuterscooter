@@ -52,14 +52,14 @@ const SignUpForm = props => {
       {error && (
         <div><em>{error}</em></div>
       )}
-      <form onSubmit={signUp}>
+      <form onSubmit={signUp} class="container">
         <input
           type="email"
           name="email"
           onChange={handleUpdate}
           value={formState.email}
           placeholder="E-mail..."
-          class="container"
+          
         />
         <input
           type="password"
